@@ -1,1 +1,30 @@
-<p>login works!</p>
+<div class="page">
+    <div class="container" fxLayout="row" fxLayoutAlign="center center">
+        <mat-card class="login-card" id="login-card">
+                <mat-card-title>Login</mat-card-title>
+            <mat-card-content>
+                <div class="form" fxLayout="row" fxLayoutAlign="center center">
+                    <form [formGroup]="form" (ngSubmit)="submit()">
+                        <div *ngIf="error" class="error">
+                            {{ error }}
+                        </div>
+                        <mat-form-field class="form-field">
+                            <input type="text" matInput placeholder="Username" formControlName="username">
+                        </mat-form-field>
+                        <mat-form-field class="form-field">
+                            <input type="password" matInput placeholder="Password" formControlName="password">
+                        </mat-form-field>
+                        <div class="button" fxLayout="row" fxLayoutAlign="center center">
+                            <mat-progress-spinner [diameter]="spinnerDiameter" mode="indeterminate" *ngIf="loading"></mat-progress-spinner>
+                            <button type="submit" class="form-field" mat-raised-button color="primary" *ngIf="!loading">Login</button>
+                        </div>    
+                    </form>
+                </div>   
+                <mat-divider class="divider"></mat-divider>             
+                <div class="card-footer" fxLayout="row" fxLayoutAlign="center center">
+                    2019 - Pyxis
+                </div>           
+            </mat-card-content>
+        </mat-card>
+    </div>    
+</div>
