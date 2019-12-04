@@ -44,7 +44,7 @@ export class RegisterComponent implements OnInit {
       } else {
         this.openSnackBar(data.response.message);
         localStorage.setItem('token', data.response.access_token);
-        this.route.navigate(['/home']);
+        this.route.navigate(['/dashboard']);
       }
     });
   }
