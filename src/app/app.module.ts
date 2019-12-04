@@ -7,19 +7,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DemoMaterialModule } from './material-module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LoginComponent } from './pages/login/login.component';
+import { MyProtectedComponentComponent } from './my-protected-component/my-protected-component.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
 import { CallbackComponent } from './pages/callback/callback.component';
 import { HomeComponent } from './pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 
-
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     CallbackComponent,
-    HomeComponent
+    HomeComponent,
+    MyProtectedComponentComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
   ],
   providers: [
-    AuthService
+    AuthService,
+    FlexLayoutModule,
   ],
   bootstrap: [AppComponent]
 })
