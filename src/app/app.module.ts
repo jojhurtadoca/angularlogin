@@ -12,10 +12,11 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
 import { HomeComponent } from './pages/home/home.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginappComponent } from './components/loginapp/loginapp.component';
 import { RegisterComponent } from './components/register/register.component';
 import {AuthGuard} from './guards/auth.guard';
+import {TokenInterceptorService} from "./services/token-interceptor.service";
 
 @NgModule({
   declarations: [
@@ -40,7 +41,12 @@ import {AuthGuard} from './guards/auth.guard';
   providers: [
     AuthService,
     FlexLayoutModule,
-    AuthGuard
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })
