@@ -14,6 +14,8 @@ import { AuthService } from './services/auth.service';
 import { CallbackComponent } from './pages/callback/callback.component';
 import { HomeComponent } from './pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginappComponent } from './components/loginapp/loginapp.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { HttpClientModule } from '@angular/common/http';
     CallbackComponent,
     HomeComponent,
     MyProtectedComponentComponent,
-    DashboardComponent
+    DashboardComponent,
+    LoginappComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
