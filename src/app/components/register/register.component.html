@@ -3,23 +3,22 @@
     <div class="form" fxLayout="row" fxLayoutAlign="center center">
         <form [formGroup]="form" (ngSubmit)="submitCrear()" autocomplete="off" novalidate>
             <mat-form-field class="form-field">
-                <input type="text" matInput placeholder="Name" formControlName="name" [(ngModel)]="name">
+                <input type="text" matInput placeholder="Name" formControlName="name" >
                 <mat-error *ngIf="hasError('name', 'required')">Name is required</mat-error>
             </mat-form-field>
             <mat-form-field class="form-field">
-                <input type="text" matInput placeholder="Email" formControlName="email" [(ngModel)]="email">
+                <input type="text" matInput placeholder="Email" formControlName="email">
                 <mat-error *ngIf="hasError('email', 'required')">Email is required</mat-error>
             </mat-form-field>
             <mat-form-field class="form-field">
-                <input type="password" matInput placeholder="Password" formControlName="password"
-                    [(ngModel)]="password">
+                <input type="password" matInput placeholder="Password" formControlName="password">
                 <mat-error *ngIf="hasError('password', 'required')">Password is required</mat-error>
             </mat-form-field>
             <div class="button" fxLayout="row" fxLayoutAlign="center center">
                 <mat-progress-spinner [diameter]="spinnerDiameter" mode="indeterminate" *ngIf="loading">
                 </mat-progress-spinner>
                 <button type="submit" class="form-field" mat-raised-button color="primary"
-                    *ngIf="!loading">Login</button>
+                    *ngIf="!loading">Register</button>
             </div>
         </form>
     </div>

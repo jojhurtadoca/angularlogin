@@ -11,20 +11,12 @@ export class AuthService {
 
   constructor(private http: HttpClient){}
 
-  login(username: string, password: string): Observable<any>{
-    return this.http.post(this.urlBase + 'auth/login',{
-      email: username,
-      password
-    });
+  login(data: object): Observable<any>{
+    return this.http.post(this.urlBase + 'auth/login', data);
   }
 
 
-  signup(name: string, email: string, password: string): Observable<any> {
-    return this.http.post(this.urlBase + 'auth/signup', {
-      name,
-      email,
-      password
-    });
+  signup(data: object): Observable<any> {
+    return this.http.post(this.urlBase + 'auth/signup', data);
   }
-  
 }
