@@ -19,4 +19,8 @@ export class AuthService {
   signup(data: object): Observable<any> {
     return this.http.post(this.urlBase + 'auth/signup', data);
   }
+
+  isLoggedIn() {
+    return !!localStorage.getItem('token');
+  }
 }

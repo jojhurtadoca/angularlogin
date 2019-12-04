@@ -8,20 +8,19 @@ import { DemoMaterialModule } from './material-module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LoginComponent } from './pages/login/login.component';
 import { MyProtectedComponentComponent } from './my-protected-component/my-protected-component.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
-import { CallbackComponent } from './pages/callback/callback.component';
 import { HomeComponent } from './pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginappComponent } from './components/loginapp/loginapp.component';
 import { RegisterComponent } from './components/register/register.component';
+import {AuthGuard} from './guards/auth.guard';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    CallbackComponent,
     HomeComponent,
     MyProtectedComponentComponent,
     DashboardComponent,
@@ -41,6 +40,7 @@ import { RegisterComponent } from './components/register/register.component';
   providers: [
     AuthService,
     FlexLayoutModule,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
