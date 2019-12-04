@@ -13,6 +13,7 @@ import {
 } from '@okta/okta-angular';
 import { MyProtectedComponentComponent } from './my-protected-component/my-protected-component.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const oktaConfig  = {
   issuer: 'https://pyxisportal.okta.com//oauth2/default',
@@ -33,6 +34,9 @@ const oktaConfig  = {
     AppRoutingModule,
     BrowserAnimationsModule,
     DemoMaterialModule,
+    FlexLayoutModule,
+    FormsModule,
+    ReactiveFormsModule,
     FlexLayoutModule,
     OktaAuthModule
   ],
